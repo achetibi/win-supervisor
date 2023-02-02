@@ -83,6 +83,21 @@ Open the terminal as administrator and run the following command
 
     cygrunsrv --install Supervisor --path /bin/python --args "/usr/local/bin/supervisord -n -c /etc/supervisord.conf"
 
+If you want to run the service at the system startup add the `--type auto` flag
+
+### Example:
+
+    cygrunsrv --install Supervisor --type auto --path /bin/python --args "/usr/local/bin/supervisord -n -c /etc/supervisord.conf"
+
+## Start supervisor service
+
+    cygrunsrv --start Supervisor
+
+## Restart supervisor service
+If you want to restart the service from your terminal you can run this command as administrator
+
+    cygrunsrv --stop Supervisor && cygrunsrv --start Supervisor
+
 ## Program configurations
 Put your program and group configurations in `<CYGWIN_INSTALL_PATH>/etc/supervisor.d` directory, here is an example:
 
